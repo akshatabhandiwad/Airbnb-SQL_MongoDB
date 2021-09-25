@@ -2,7 +2,7 @@
  
  **Group Members: Akshata Bhandiwad, Ankush Ahir, Ketaki Vardekar**
  
- This is a group project and was carried out as a part of BUAN 6320 - Database Foundations for Business Analytics at the University of Texas at Dallas. 
+ This group project was carried out as a part of BUAN 6320 - Database Foundations for Business Analytics at the University of Texas at Dallas. 
  
 **Airbnb** is an internationally known vacation rental company, that connects the guests (customers) to the hosts (property owners) offering short term lodging options in more than 191 countries. Since 2008, guests and hosts have used Airbnb to travel in a more unique, personalized way.  
 As part of the Airbnb Inside initiative, the [kaggle dataset](https://www.kaggle.com/airbnb/seattle) used for this project describes the listing activity of homestays in Seattle, WA. The dataset is part of [Airbnb Inside](http://insideairbnb.com/get-the-data.html).
