@@ -11,4 +11,4 @@ The business of Airbnb is constantly growing and highly impressive. To understan
 - Weekly prices can be lower for properties with lesser bedrooms.
 - Strict cancellation policies are best for properties with high review scores.
 
-The physical data base was created in MySQL Data Cleaning process was carried out in R programing language. The data cleaning R scripts also include the codes for loading the cleaned data into SQL database and MongoDB.  All the files can be found in the relevant folders. 
+The physical data base was created in MySQL Data Cleaning process was carried out in R programing language. The data cleaning R scripts also include the codes for loading the cleaned data into SQL database and MongoDB. All the files can be found in the relevant folders. 
