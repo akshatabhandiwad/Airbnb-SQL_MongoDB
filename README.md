@@ -4,7 +4,8 @@
  
  This is a group project and was carried out as a part of BUAN 6320 - Database Foundations for Business Analytics at the University of Texas at Dallas. 
  
-**Airbnb** is an internationally known vacation rental company, that connects the guests (customers) to the hosts(property owners) offering short term lodging options in more than 191 countries. Since 2008, guests and hosts have used Airbnb to travel in a more unique, personalized way.  As part of the Airbnb Inside initiative, the [kaggle dataset](https://www.kaggle.com/airbnb/seattle) used for this project describes the listing activity of homestays in Seattle, WA. The dataset is part of [Airbnb Inside](http://insideairbnb.com/get-the-data.html).
+**Airbnb** is an internationally known vacation rental company, that connects the guests (customers) to the hosts (property owners) offering short term lodging options in more than 191 countries. Since 2008, guests and hosts have used Airbnb to travel in a more unique, personalized way.  
+As part of the Airbnb Inside initiative, the [kaggle dataset](https://www.kaggle.com/airbnb/seattle) used for this project describes the listing activity of homestays in Seattle, WA. The dataset is part of [Airbnb Inside](http://insideairbnb.com/get-the-data.html).
 
 The business of Airbnb is constantly growing and highly impressive. To understand deeper property pricing and reviews, we explored the following scenarios in both **MySQL** and **MongoDB**:
 - Daily prices can be higher for properties with more bathrooms.
