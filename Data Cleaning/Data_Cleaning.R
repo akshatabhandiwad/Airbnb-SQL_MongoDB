@@ -26,7 +26,7 @@ reviews[, .N, by=.(reviewer_id)]
 reviewer_datails <- data.table(unique(reviews[,4:5]))
 reviewer_datails <- reviewer_datails[order(reviewer_datails$reviewer_id, decreasing = FALSE)]
 
-# write.csv(reviewer_datails, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/reviewer details.csv", row.names = FALSE)
+# write.csv(reviewer_datails, file =  "add destination path/Cleaned data/reviewer details.csv", row.names = FALSE)
   
 
               
@@ -36,7 +36,7 @@ review.final <- data.table(reviews[,c("id","listing_id","date","reviewer_id","co
 review.final <- review.final[order(review.final$id, decreasing = FALSE)]
 colnames(review.final) <- c("Review_id", "listing_id","Review_date","reviewer_id","comments")
 
-#write.csv(review.final, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/reviews.csv",
+#write.csv(review.final, file =  "add destination path/Cleaned data/reviews.csv",
 #          row.names = FALSE)
 
 
@@ -60,7 +60,7 @@ calendar$price <- as.integer(calendar$price)
 calendar$date <- as.POSIXct(calendar$date, format = "%Y%m%d")
 
 
-#write.csv(calendar, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Availability.csv",
+#write.csv(calendar, file =  "add destination path/Cleaned data/Listing Availability.csv",
 #          row.names = FALSE)
 
 
@@ -97,7 +97,7 @@ Listing <- Listing[, -c("host_url","host_name","host_since","host_location","hos
                         "host_verifications","host_has_profile_pic","host_identity_verified")]
 
 
-#write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing WorkInProgress.csv",
+#write.csv(Listing, file =  "add destination path/Cleaned data/Listing WorkInProgress.csv",
 #          row.names = FALSE)
 
 
@@ -113,7 +113,7 @@ Host.url$host_thumbnail_url <- gsub(" ", "", Host.url$host_thumbnail_url)
 Host.url$host_picture_url <- gsub(" ", "", Host.url$host_picture_url)
 
 
-#write.csv(Host.url, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host URL.csv",
+#write.csv(Host.url, file =  "add destination path/Cleaned data/Host URL.csv",
 #          row.names = FALSE)
 
 
@@ -121,7 +121,7 @@ Host.url$host_picture_url <- gsub(" ", "", Host.url$host_picture_url)
 # removing Listing url from listing
 host.raw <- host.raw[, -c("host_url","host_thumbnail_url","host_picture_url")]
 
-#write.csv(host.raw, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Raw data.csv",
+#write.csv(host.raw, file =  "add destination path/Cleaned data/Host Raw data.csv",
 #          row.names = FALSE)
 
 
@@ -182,14 +182,14 @@ Host.verify$host_verifications <- gsub("'weibo'", "", Host.verify$host_verificat
 Host.verify <- Host.verify[, -c("host_verifications")]
 
 
-#write.csv(Host.verify, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Verifications.csv",
+#write.csv(Host.verify, file =  "add destination path/Cleaned data/Host Verifications.csv",
 #          row.names = FALSE)
 
 
 # removing host verifications from host raw data
 host.raw <- host.raw[, -c("host_verifications","host_has_profile_pic","host_identity_verified")]
 
-#write.csv(host.raw, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Raw data.csv",
+#write.csv(host.raw, file =  "add destination path/Cleaned data/Host Raw data.csv",
 #          row.names = FALSE)
 
 
@@ -226,7 +226,7 @@ host.raw$c2 <- gsub('United States', "", host.raw$c2)
 host.raw$country1 <- paste0(host.raw$c3,host.raw$c5, host.raw$c6)
 
 
-#write.csv(host.raw, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Details WIP.csv",
+#write.csv(host.raw, file =  "add destination path/Cleaned data/Host Details WIP.csv",
 #          row.names = FALSE)
 
 ## OTHER CHANGES DONE MANUALLY
@@ -241,7 +241,7 @@ host.raw1$host_since <- as.POSIXct(host.raw1$host_since, "%Y-%m-%d")
 
 
 
-#write.csv(host.raw1, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Details.csv",
+#write.csv(host.raw1, file =  "add destination path/Cleaned data/Host Details.csv",
 #          row.names = FALSE)
 
 
@@ -285,7 +285,7 @@ Listing$property_type[Listing$property_type == "Tent"] <- 16
 colnames(Property_type) <- c("Property_type_id", "property_type")
 
 
-#write.csv(Property_type, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Property Type.csv",
+#write.csv(Property_type, file =  "add destination path/Cleaned data/Property Type.csv",
 #         row.names = FALSE)
 
 
@@ -306,7 +306,7 @@ Listing$bed_type[Listing$bed_type == "Couch"] <- 5
 
 colnames(Bed_type) <- c("Bedtype_id", "Bed_Type")
 
-#write.csv(Bed_type, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Bed type.csv",
+#write.csv(Bed_type, file =  "add destination path/Cleaned data/Bed type.csv",
 #          row.names = FALSE)
 
 
@@ -327,7 +327,7 @@ Listing$room_type[Listing$room_type == "Shared room"] <- 3
 
 colnames(Room_type) <- c("Room_type_id", "room_type")
 
-#write.csv(Room_type, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Room Type.csv",
+#write.csv(Room_type, file =  "add destination path/Cleaned data/Room Type.csv",
 #          row.names = FALSE)
 
 
@@ -360,14 +360,14 @@ Listing.Prices$cleaning_fee = gsub("\\$", "", Listing.Prices$cleaning_fee)
 Listing.Prices$cleaning_fee = as.numeric(gsub(",", "", Listing.Prices$cleaning_fee))
 
 
-write.csv(Listing.Prices, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Price details.csv",
+write.csv(Listing.Prices, file =  "add destination path/Cleaned data/Listing Price details.csv",
           row.names = FALSE)
 
 
 # removing  listing price columns from listing
 Listing <- Listing[, -c("price","weekly_price","monthly_price","extra_people","security_deposit","cleaning_fee")]
 
-#write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing WorkInProgress.csv",
+#write.csv(Listing, file =  "add destination path/Cleaned data/Listing WorkInProgress.csv",
 #         row.names = FALSE)
 
 
@@ -389,7 +389,7 @@ colnames(Listing.rev.details) <- c("listing_id","number_of_reviews","first_revie
                                    "review_scores_communication","review_scores_location",
                                    "review_scores_value")
 
-#write.csv(Listing.rev.details, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Review details.csv",
+#write.csv(Listing.rev.details, file =  "add destination path/Cleaned data/Listing Review details.csv",
 #          row.names = FALSE)
 
 
@@ -401,7 +401,7 @@ Listing <- Listing[, -c("number_of_reviews","first_review","last_review",
                         "review_scores_communication","review_scores_location",
                         "review_scores_value")]
 
-#write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing WorkInProgress.csv",
+#write.csv(Listing, file =  "add destination path/Cleaned data/Listing WorkInProgress.csv",
 #          row.names = FALSE)
 
 
@@ -414,7 +414,7 @@ Listing.rev.details1$last_review <- (format(as.Date(Listing.rev.details1$last_re
 Listing.rev.details1$last_review <- as.POSIXct(Listing.rev.details1$last_review, "%Y-%m-%d")
 
 
-#write.csv(Listing.rev.details1, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Review details.csv",
+#write.csv(Listing.rev.details1, file =  "add destination path/Cleaned data/Listing Review details.csv",
 #          row.names = FALSE)
 
 
@@ -426,14 +426,14 @@ Listing.url <- data.table(Listing[,c("id","listing_url","thumbnail_url","medium_
 Listing.url <- Listing.url[order(Listing.url$id, decreasing = FALSE)]
 colnames(Listing.url) <- c("listing_id","listing_url","thumbnail_url","medium_url","picture_url","xl_picture_url")
 
-#write.csv(Listing.url, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing URL.csv",
+#write.csv(Listing.url, file =  "add destination path/Cleaned data/Listing URL.csv",
 #          row.names = FALSE)
 
 
 # removing Listing url from listing
 Listing <- Listing[, -c("listing_url","thumbnail_url","medium_url","picture_url","xl_picture_url")]
 
-#write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing WorkInProgress.csv",
+#write.csv(Listing, file =  "add destination path/Cleaned data/Listing WorkInProgress.csv",
 #          row.names = FALSE)
 
 
@@ -450,7 +450,7 @@ Listing$cancellation_policy[Listing$cancellation_policy == "strict"] <- 1
 Listing$cancellation_policy[Listing$cancellation_policy == "moderate"] <- 2
 Listing$cancellation_policy[Listing$cancellation_policy == "flexible"] <- 3
 
-#write.csv(Cancellation_policy.type, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Cancellation type.csv",
+#write.csv(Cancellation_policy.type, file =  "add destination path/Cleaned data/Cancellation type.csv",
 #          row.names = FALSE)
 
 
@@ -588,7 +588,7 @@ amenities$amenities <- gsub('Doorman', "", amenities$amenities)
 # removing amenities from amenities
 amenities <- amenities[, -c("amenities")]
 
-#write.csv(amenities, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Amenities.csv",
+#write.csv(amenities, file =  "add destination path/Cleaned data/Amenities.csv",
 #          row.names = FALSE)
 
 
@@ -596,7 +596,7 @@ amenities <- amenities[, -c("amenities")]
 # removing amenities columns from listing
 Listing <- Listing[, -c("amenities")]
 
-#write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing WorkInProgress.csv",
+#write.csv(Listing, file =  "add destination path/Cleaned data/Listing WorkInProgress.csv",
 #          row.names = FALSE)
 
 
@@ -677,7 +677,7 @@ Listing_Final <- Listing[ ,c("id","scrape_id","last_scraped","name","summary","s
 setNames(Listing_Final, "id", "listing_id")
 
 
-#write.csv(Listing_Final, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listings.csv",
+#write.csv(Listing_Final, file =  "add destination path/Cleaned data/Listings.csv",
 #          row.names = FALSE)
 
 
@@ -711,7 +711,7 @@ dbListTables(stuffDB)
 
 col_names <- colnames(amenities)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/amenities.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/amenities.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -733,7 +733,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "amenities", 
 
 col_names <- colnames(Bed_type)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Bed type.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Bed type.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -749,7 +749,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Bed type", a
 
 col_names <- colnames(Property_type)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Property type.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Property type.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -765,7 +765,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Property typ
 
 col_names <- colnames(Room_type)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Room type.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Room type.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -781,7 +781,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Room type", 
 
 col_names <- colnames(Cancellation_policy.type)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Cancellation type.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Cancellation type.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -797,7 +797,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Cancellation
 
 col_names <- colnames(Host.url)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host URL.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Host URL.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -813,7 +813,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Host URL", a
 
 col_names <- colnames(Host.verify)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Verifications.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Host Verifications.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -829,7 +829,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Host Verific
 
 col_names <- colnames(host.raw1)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Host Details.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Host Details.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -858,7 +858,7 @@ col_names <- c("listing_id","scrape_id","last_scraped","name","summary","space",
                "calendar_last_scraped","requires_license","license")
 
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listings.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Listings.csv",open="r")   
 
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
@@ -875,7 +875,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Listing Deta
 
 col_names <- colnames(Listing.Prices)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Price Details.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Listing Price Details.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -891,7 +891,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Listing Pric
 
 col_names <- colnames(Listing.rev.details1)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Review details.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Listing Review details.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -907,7 +907,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Listing Revi
 
 col_names <- colnames(Listing.url)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing URL.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Listing URL.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -923,7 +923,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Listing URL"
 
 col_names <- colnames(reviewer_datails)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/reviewer details.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/reviewer details.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -939,7 +939,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Reviewer Det
 
 col_names <- colnames(review.final)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/reviews.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/reviews.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
@@ -955,7 +955,7 @@ dbWriteTable(stuffDB, value = dataChunk, row.names = FALSE, name = "Reviews", ap
 
 col_names <- colnames(calendar)
 #Open the file connection
-con <- file(description="~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Seattle Airbnb Open Data/Cleaned data/Listing Availability.csv",open="r")   
+con <- file(description="add destination path/Cleaned data/Listing Availability.csv",open="r")   
 #Read the data chunkWise
 dataChunk <- read.table(con, header=T, fill=TRUE, sep=",", quote = '"', col.names = col_names)
 
