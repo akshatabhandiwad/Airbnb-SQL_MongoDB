@@ -1,4 +1,4 @@
-setwd("~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Data For Mongo")
+setwd("set current working directory path here")
 if(!require('bit64')) install.packages('bit64')
 if(!require('stringi')) install.packages('stringi')
 
@@ -24,7 +24,7 @@ reviews <- data.table(reviews[,c("id","listing_id","date","reviewer_id","reviewe
 reviews <- reviews[order(reviews$id, decreasing = FALSE)]
 colnames(reviews) <- c("Review_id", "listing_id","Review_date","reviewer_id","reviewer_name","comments")
 
-write.csv(reviews, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Data For Mongo/Cleaned data/reviews.csv",
+write.csv(reviews, file =  "add destination path/Cleaned data/reviews.csv",
          row.names = FALSE, na = "")
 
 
@@ -48,7 +48,7 @@ calendar$price <- as.integer(calendar$price)
 calendar$date <- as.POSIXct(calendar$date, format = "%Y%m%d")
 
 
-write.csv(calendar, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Data For Mongo/Cleaned data/Listing Availability.csv",
+write.csv(calendar, file =  "add destination path/Cleaned data/Listing Availability.csv",
           row.names = FALSE, na = "")
 
 
@@ -165,5 +165,5 @@ Listing <- Listing[, -c("street")]
 setnames(Listing, "id", "listing_id")
 
 
-write.csv(Listing, file =  "~/OneDrive - The University of Texas at Dallas/BUAN 6320/BUAN 6320 Project/Data For Mongo/Cleaned data/Listing.csv",
+write.csv(Listing, file =  "add destination path/Cleaned data/Listing.csv",
           row.names = FALSE, na = "")
